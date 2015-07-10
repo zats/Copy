@@ -36,12 +36,7 @@ public class Xerox {
             // Files / folders
             let isUTFileItem = attachment.typedAccess(kUTTypeItem, group) { obj in
                 if let URL = obj as? NSURL {
-//                    let URL2 = try! NSURL(byResolvingAliasFileAtURL: URL, options: NSURLBookmarkResolutionOptions.WithoutUI)
-//                    print(URL2)
-//                    URL2.startAccessingSecurityScopedResource()
                     pasteboardItems.append(URL)
-//                    URL2.writeToPasteboard(NSPasteboard.generalPasteboard())
-//                    URL2.stopAccessingSecurityScopedResource()
                 }
             }
             // Not a file
