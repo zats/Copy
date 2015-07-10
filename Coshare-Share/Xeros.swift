@@ -16,8 +16,8 @@ public class Xerox {
     public func copy(extensionItems: [NSExtensionItem], completion: (Bool -> Void)) {
         
 
-        var pasteboardItems:[NSPasteboardWriting] = []
-        
+        var pasteboardItems:[NSPasteboardWriting] = extensionItems.flatMap{ return $0.attributedContentText }
+
         let group = dispatch_group_create()
         let attachments: [NSItemProvider] = extensionItems.flatMap{ $0.attachments as! [NSItemProvider] }
         for attachment in attachments {
